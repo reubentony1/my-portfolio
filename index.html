@@ -3,57 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reuben Tony Omondi - Homepage</title>
+    <title>Welcome - Reuben Omondi's Diary</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="page-transition">
-    <header>
-        <div class="header-content">
-            <div class="site-title-area">
-                <img src="reuben.jpg" alt="Reuben Tony Omondi Logo" class="header-logo">
-                <h1>My Digital Journey!</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="childhood.html">Childhood</a></li>
-                    <li><a href="education.html">Education</a></li>
-                    <li><a href="skills.html">Skills & Talents</a></li>
-                    <li><a href="aspirations.html">Future Aspirations</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+<body>
+    <div id="welcomeModal" class="modal show">
+        <div class="modal-content animate">
+            <img src="reuben.jpg" alt="Reuben Logo" class="modal-logo">
+            <h2>Welcome to Reuben Omondi's Diary</h2>
+            <p>Here you will discover my childhood memories, education journey, talents, aspirations, and more about my life’s story. 
+            Click below to start exploring my digital journey.</p>
+            <button onclick="goToHome()">Enter My Journey</button>
         </div>
-    </header>
-
-    <main class="homepage-content">
-        <section id="introduction">
-            <h2>Hello, I'm Reuben Tony Omondi!</h2>
-            <p>I was born at the crack of dawn, 5:36 a.m., on the 19th of December 1996, in the humble village of Namudoda, Emukhweso sub-location, Elugulu Location, Butula Constituency, Busia County, Kenya.</p>
-            <p>Life has been a tapestry sometimes threaded with joy, sometimes with tears but always weaving a story worth telling. I wear my faith in the Almighty like a crown, ministering at Full Gospel Churches of Kenya, Malanga Branch, Nambale LCA, Busia District. I believe life is a dance; when it plays a slow song, we sway with patience, and when it beats hard, we dance with passion.</p>
-            <p>My ultimate goal is to become a technocrat in software development, crafting solutions that solve real-world problems and inspire the next generation, while also continuing my passion for farming. Feel free to explore the different sections to learn more about my journey!</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Reuben Tony Omondi. All rights reserved.</p>
-    </footer>
-
-    <!-- Back To Top Button -->
-    <button id="backToTop" title="Go to top">↑</button>
+    </div>
 
     <script>
-        const backToTopButton = document.getElementById('backToTop');
-        window.onscroll = function () {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                backToTopButton.style.display = "block";
-            } else {
-                backToTopButton.style.display = "none";
-            }
-        };
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+        function goToHome() {
+            window.location.href = "home.html";
+        }
     </script>
 </body>
 </html>
