@@ -6,7 +6,7 @@
     <title>Reuben Tony Omondi - Skills & Talents</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page-transition">
     <header>
         <div class="header-content">
             <div class="site-title-area">
@@ -18,13 +18,14 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="childhood.html">Childhood</a></li>
                     <li><a href="education.html">Education</a></li>
-                    <li><a href="skills.html">Skills & Talents</a></li>
+                    <li><a href="skills.html" class="active">Skills & Talents</a></li>
                     <li><a href="aspirations.html">Future Aspirations</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
     <main class="skills-content">
         <section id="skills-talents">
             <h2>My Skills & Talents</h2>
@@ -77,6 +78,22 @@
     <footer>
         <p>&copy; 2025 Reuben Tony Omondi. All rights reserved.</p>
     </footer>
-    <script src="script.js"></script>
+
+    <!-- Back To Top Button -->
+    <button id="backToTop" title="Go to top">↑</button>
+
+    <script>
+        const backToTopButton = document.getElementById('backToTop');
+        window.onscroll = function () {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>

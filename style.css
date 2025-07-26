@@ -1,8 +1,14 @@
 /* Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Waving light blue background */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.7;
@@ -14,6 +20,7 @@ body {
     background-size: 400% 400%;
     animation: waveBackground 15s ease infinite;
 }
+
 @keyframes waveBackground {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -30,11 +37,13 @@ header {
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
+
 footer {
     background: #28509c;
     color: white;
     text-align: center;
     padding: 15px 0;
+    margin-top: auto;
 }
 
 /* Header Content */
@@ -47,12 +56,14 @@ footer {
     align-items: center;
     text-align: center;
 }
+
 .site-title-area {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
 }
+
 .header-logo {
     width: 80px;
     height: 80px;
@@ -69,6 +80,7 @@ nav ul {
     justify-content: center;
     flex-wrap: wrap;
 }
+
 nav ul li { margin: 0 15px; }
 nav ul li a {
     color: white;
@@ -76,6 +88,7 @@ nav ul li a {
     font-weight: bold;
     position: relative;
 }
+
 nav ul li a::after {
     content: '';
     position: absolute;
@@ -86,7 +99,11 @@ nav ul li a::after {
     left: 0;
     transition: width 0.3s ease;
 }
-nav ul li a:hover::after { width: 100%; }
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
 
 /* Main Content */
 main {
@@ -110,6 +127,7 @@ main {
     margin: 0 auto 20px auto;
     transition: transform 0.3s ease-in-out;
 }
+
 .profile-pic:hover { transform: scale(1.05); }
 
 /* Back To Top */
@@ -131,8 +149,150 @@ main {
 }
 #backToTop:hover { transform: scale(1.1); background: #007bff; }
 
+/* Modal (Welcome & Contact) */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    z-index: 10000;
+}
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+.modal-content {
+    background: white;
+    padding: 30px;
+    width: 45%;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+}
+.modal-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #007bff;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+/* Contact details above form */
+.contact-details {
+    text-align: left;
+    margin-bottom: 20px;
+}
+.contact-details p {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+.contact-details a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Contact Form */
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.submit-btn, .back-home {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+.submit-btn {
+    background: green;
+    color: white;
+}
+.submit-btn:hover {
+    background: #007bff;
+}
+.back-home {
+    background: #ccc;
+}
+.back-home:hover {
+    background: #999;
+}
+
+.leave-msg {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #444;
+    text-align: center;
+    background: gold;
+}
+
+/* Goodbye Page Styling */
+.goodbye-content {
+    text-align: center;
+    padding: 50px 20px;
+}
+.goodbye-content h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+.goodbye-content p {
+    margin-bottom: 10px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     nav ul { flex-direction: column; gap: 10px; }
     .profile-pic { width: 150px; height: 150px; }
+    .modal-content { width: 90%; }
+}
+/* Container for the marquee to ensure overflow hidden */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Marquee text styling */
+.marquee-text {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 8s linear infinite;
+    font-weight: bold;
+    color: #007bff;
+    font-size: 1.1em;
+}
+
+/* Keyframes for the scrolling animation */
+@keyframes marquee {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
 }

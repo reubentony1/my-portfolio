@@ -6,7 +6,7 @@
     <title>Reuben Tony Omondi - Future Aspirations</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page-transition">
     <header>
         <div class="header-content">
             <div class="site-title-area">
@@ -19,12 +19,13 @@
                     <li><a href="childhood.html">Childhood</a></li>
                     <li><a href="education.html">Education</a></li>
                     <li><a href="skills.html">Skills & Talents</a></li>
-                    <li><a href="aspirations.html">Future Aspirations</a></li>
+                    <li><a href="aspirations.html" class="active">Future Aspirations</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+    
     <main class="aspirations-content">
         <section id="future-aspirations">
             <h2>Future Aspirations</h2>
@@ -33,12 +34,12 @@
             <div class="aspiration-area">
                 <h3>Becoming a Technocrat in Software Development</h3>
                 <p>My primary professional aspiration is to become a leading technocrat in software development. I am driven to craft innovative solutions that address real-world problems and push the boundaries of technology. This involves continuous learning, mastering new programming languages and frameworks, and contributing to impactful projects that can inspire the next generation of developers.</p>
-                </div>
+            </div>
 
             <div class="aspiration-area">
                 <h3>Sustaining and Growing My Farming Endeavors</h3>
                 <p>Alongside my technological pursuits, I am committed to continuing and expanding my farming endeavors. I believe that food is life, and contributing to food security is a vital role. My dream is to develop sustainable farming practices, potentially integrating technology to improve efficiency and yield, ensuring I remain part of feeding the future.</p>
-                </div>
+            </div>
 
             <div class="aspiration-area">
                 <h3>Building People and Communities</h3>
@@ -51,6 +52,22 @@
     <footer>
         <p>&copy; 2025 Reuben Tony Omondi. All rights reserved.</p>
     </footer>
-    <script src="script.js"></script>
+
+    <!-- Back To Top Button -->
+    <button id="backToTop" title="Go to top">↑</button>
+
+    <script>
+        const backToTopButton = document.getElementById('backToTop');
+        window.onscroll = function () {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        };
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
